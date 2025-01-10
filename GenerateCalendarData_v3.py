@@ -4,6 +4,7 @@
 ####TODO:
 ##fix the leave group pattern so it's not hard coded
 ##output a json file
+##parameterise the year
 ##multi-year support
 
 import json
@@ -32,7 +33,7 @@ def get_leave_group(date):
 
 # Define the watch cycle starting from 08 Oct 2024
 watch_cycle = [
-    ('Green', 'Blue'),  # DayShift: Green, NightShift: Blue
+    ('Green', 'Blue'),  # DayShift on 08 Oct 2024 is Green (and NightShift is Blue)
     ('Green', 'Blue'),
     ('Red', 'Green'),
     ('Red', 'Green'),
@@ -96,3 +97,10 @@ while current_date.year == 2025:
 
 # Print the result in JSON format
 print(json.dumps(shifts_by_month, indent=2))
+
+# output json file to c:\temp named FENZCalendar_{current_date.year}.json
+# output_file_path = f"C:/temp/FENZCalendar_{current_date.year}.json"
+# with open(output_file_path, 'w', encoding='utf-8') as json_file:
+ #   json.dump(shifts_by_month, json_file, indent=2)
+
+
